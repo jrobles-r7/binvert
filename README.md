@@ -10,3 +10,6 @@ optional arguments:
   -i IPS, --ips IPS     Comma separated list of ip addresses
   -f FILENAME, --filename FILENAME
                         File with one IP address per line
+# TODO
+Add the ability to go through multiple pages of search results
+Organize the output. Group similar URIs(?), remove unique paths and only keep hosts(?)
