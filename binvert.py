@@ -35,4 +35,6 @@ if __name__ == '__main__':
         r = requests.get("https://www.bing.com/search?q=ip%3a"+ip_address)
         tree =  html.fromstring(r.content)
         print ip_address
-        print tree.xpath("//div[@class='b_attribution']/cite/descendant-or-self::*/text()")
+        for node in tree.xpath("//div[@class='b_attribution']/cite"):
+            print node.xpath("normalize-space()")
+        print ''
