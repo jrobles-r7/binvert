@@ -5,7 +5,6 @@ from lxml import html
 import sys
 import re
 
-#add a flag for number of pages to search through
 def get_args():
     parser = argparse.ArgumentParser(description='Return the hostname of the supplied IP addresses using Bing')
     parser.add_argument('-i', '--ips',
@@ -34,10 +33,8 @@ if __name__ == '__main__':
         print parser.print_help()
         sys.exit(1)
 
-    #pages
     pages = 1 if args.pages < 1 else args.pages
 
-    #view bing search results. figure out xpath for going to the next page
     for ip_address in ip_addresses:
         base = 'https://www.bing.com/search?q=ip%3a'+ip_address
         r = requests.get(base)
