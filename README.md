@@ -14,7 +14,9 @@ Use Bing ip: searches to find the hostname of the provided ip addresses
  >-f FILENAME, --filename FILENAME
  >
  >File with one IP address per line
+ >
  >-p PAGES, --pages PAGES
+ >
  >Number of Bing pages to parse
  
 # TODO
