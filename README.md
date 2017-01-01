@@ -1,7 +1,7 @@
 # binvert
 Use Bing ip: searches to find the hostname of the provided ip addresses
 
- >usage: binvert.py [-h] [-i IPS] [-f FILENAME]
+ >usage: binvert.py [-h] [-i IPS] [-f FILENAME] [-p PAGES]
  >
  >Return the hostname of the supplied IP addresses using Bing
  >
