@@ -1,5 +1,5 @@
 # binvert
-Use Bing ip: searches to find the hostname of the provided ip addresses. Results should be verified...
+Use Bing ip: searches to find the hostname of the provided ip addresses.
 
  >usage: binvert.py [-h] [-i IPS] [-f FILENAME] [-p PAGES]
  >
@@ -20,6 +20,4 @@ Use Bing ip: searches to find the hostname of the provided ip addresses. Results
  >Number of Bing pages to parse
  
 # TODO
-Organize the output. Group similar URIs(?), remove unique paths and only keep hosts(?)
-
-Run host command on identified hostnames to verify results... I have seen a few inconsistencies... 
+Fix parsing of bing results for certain pages...
