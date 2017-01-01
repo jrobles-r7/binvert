@@ -1,7 +1,9 @@
 #!/usr/bin/python2
 import requests
 import argparse
+import subprocess
 from lxml import html
+from urlparse import urlparse
 import sys
 import re
 
@@ -56,5 +58,17 @@ if __name__ == '__main__':
             counter += 1
 
         print ip_address
-        print '\n'.join(list(set(urls)))
+        valid_net = []
+        urls = list(set(urls))
+        for url in urls:
+            scheme = re.findall('^http(s|)://', url)
+            if not scheme:
+                url = 'http://' + url
+            url = urlparse(url)
+            ps = subprocess.Popen(('host', url.netloc), stdout=subprocess.PIPE)
+            out = subprocess.check_output(('awk',"/has address/ {print $4}"), stdin=ps.stdout)
+            ps.wait()
+            if ip_address == out.strip():
+                valid_net.append(url.netloc)
+        print '\n'.join(list(set(valid_net)))
         print ''
