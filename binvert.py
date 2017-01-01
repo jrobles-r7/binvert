@@ -63,7 +63,7 @@ if __name__ == '__main__':
         for url in urls:
             scheme = re.findall('^http(s|)://', url)
             if not scheme:
-                url = 'http://' + url
+                url = 'http://' + url.split()[0]
             url = urlparse(url)
             ps = subprocess.Popen(('host', url.netloc), stdout=subprocess.PIPE)
             out = subprocess.check_output(('awk',"/has address/ {print $4}"), stdin=ps.stdout)
