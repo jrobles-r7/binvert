@@ -20,6 +20,5 @@ Use Bing ip: searches to find the hostname of the provided ip addresses.
  >Number of Bing pages to parse
  
 # TODO
-Add ascii art because it's not a real script yet
 
 Modify the parsing of the host command output. host can return multiple IP addresses.
